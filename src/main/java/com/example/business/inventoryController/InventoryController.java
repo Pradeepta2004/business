@@ -18,7 +18,7 @@ public class InventoryController {
     }
 
     // Create a new inventory item
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<InventoryModel> createInventoryItem(@RequestBody InventoryModel inventoryModel) {
         InventoryModel createdInventoryModel = inventoryService.createInventoryItem(inventoryModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdInventoryModel);
